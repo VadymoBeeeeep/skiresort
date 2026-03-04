@@ -1,0 +1,209 @@
+/* styles.css - общий дизайн для всех страниц Skyggefjell Skibakken */
+
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #0a1f3a, #001122);
+    color: #e0f2fe;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Шапка */
+header {
+    background: linear-gradient(rgba(10, 31, 58, 0.85), rgba(10, 31, 58, 0.95)),
+                url('https://cdn.sanity.io/images/jlrwvnbf/production/1324a748f87c1664fdaea70cc72866b581117fca-9252x5202.jpg?w=1600&auto=format') center/cover no-repeat fixed;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    font-size: 4.8rem;
+    font-weight: 800;
+    text-shadow: 0 6px 20px rgba(0,0,0,0.9);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Навигация */
+nav {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav a {
+    color: #e0f2fe;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00d084;
+}
+
+/* Основной контент */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Секции */
+section {
+    margin: 60px 0;
+}
+
+h2 {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #a5d8ff;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #00d084;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+.btn-guest {
+    background: linear-gradient(135deg, #00d084, #00a651);
+    color: white;
+}
+
+.btn-admin {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 208, 132, 0.3);
+}
+
+/* Таблица для Staff Portal */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+th {
+    background: rgba(0, 208, 132, 0.15);
+    color: #00d084;
+    font-weight: 700;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+/* Форма бронирования */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+input, button {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 1.1rem;
+}
+
+button {
+    background: #00d084;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover {
+    background: #00b874;
+}
+
+/* Меню ресторана */
+.menu-item {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border-left: 5px solid #00d084;
+}
+
+/* Футер */
+footer {
+    background: #0a1f3a;
+    color: #a5d8ff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+footer a {
+    color: #00d084;
+    text-decoration: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    header h1 { font-size: 3.5rem; }
+    header p { font-size: 1.3rem; }
+    nav a { margin: 0 10px; font-size: 1rem; }
+    h2 { font-size: 2.5rem; }
+}
