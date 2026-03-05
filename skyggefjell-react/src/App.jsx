@@ -1,5 +1,6 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import snowboarderImg from './assets/snowboarder.jpg';
 import './index.css'; 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [filterEquipment, setFilterEquipment] = useState('');
 
-  // Filter records based on search query and equipment filter
+  // фільтр за поиском
   const filteredRecords = staffRecords.filter((record) => {
     const matchesName = record.name.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesId = record.id.toString().includes(searchQuery);
@@ -38,7 +39,7 @@ function App() {
     return (matchesName || matchesId) && matchesEquipment;
   });
 
-  // Get unique equipment list
+  // вся екіпа
   const allEquipment = [...new Set(staffRecords.flatMap((r) => r.equipment))].sort();
 
   return (
@@ -107,15 +108,15 @@ function App() {
                   </div>
                   <div className="hero-item">
                     <img
-                      src="https://www.dopesnow.com/mag/is-snowboarding-a-good-workout/?srsltid=AfmBOor2aOabYKL_T6MPeQLiNK7dXGf9YyXLDUXJV1RXtiNOwQs9acL0"
-                      alt="Snowboard"
+                      src={snowboarderImg}
+                      alt="Snowboarder on mountain slope"
                       className="hero-img"
                       onError={(e) => {
-                        e.target.src = "https://via.placeholder.com/600x400/1e40af/ffffff?text=Snowboard";
+                        e.target.src = "https://via.placeholder.com/600x400/1e40af/ffffff?text=Snowboarder";
                       }}
                     />
                     <div className="hero-caption">
-                      <h4>Snowboard</h4>
+                      <h4>Snowboarder in Action</h4>
                       <p>Premium snowboarding equipment available</p>
                     </div>
                   </div>
